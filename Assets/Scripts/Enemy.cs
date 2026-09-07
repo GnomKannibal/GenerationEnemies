@@ -3,21 +3,23 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private PointDeterminant _pointDeterminant;
-    private float speed = 5f;
-    private float x;
-    private float z;
+    private float _speed = 5f;
+    private Vector3 _direction;
+   
 
     private void Start()
     {
-        x = Random.Range(-1, 2);
-        z = Random.Range(-1, 2);
+        _direction = new Vector3(Random.Range(-1, 2), 0f, Random.Range(-1, 2));
+
+        if (_direction == Vector3.zero)
+            _direction = Vector3.forward;
 
         gameObject.transform.position = _pointDeterminant.GetRandomSpawnPoint();
     }
 
     private void Update()
     {
-        gameObject.transform.Translate(x * speed * Time.deltaTime, 0, z * speed * Time.deltaTime);
+        gameObject.transform.Translate(_direction * _speed * Time.deltaTime);
     }
 }
 
