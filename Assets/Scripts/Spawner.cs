@@ -6,19 +6,19 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Enemy _enemy;
     [SerializeField] private PointDeterminant _pointDeterminant;
 
-    private Vector3 _direction;
+    private Vector3 _directionNewEnemy;
 
     private void Awake()
     {
-        StartCoroutine(DropEnemy());
+        StartCoroutine(EnemyAutoSpawn());
 
-        _direction = new Vector3(Random.Range(-1, 2), 0f, Random.Range(-1, 2));
+        _directionNewEnemy = new Vector3(Random.Range(-1, 2), 0f, Random.Range(-1, 2));
 
-        if (_direction == Vector3.zero)
-            _direction = Vector3.forward;
+        if (_directionNewEnemy == Vector3.zero)
+            _directionNewEnemy = Vector3.forward;
     }
 
-    public IEnumerator DropEnemy() 
+    public IEnumerator EnemyAutoSpawn() 
     {
         float delay = 1f;
         bool isRun = false;
@@ -36,6 +36,8 @@ public class Spawner : MonoBehaviour
     {
         Enemy newEnemy = Instantiate(_enemy);
 
-        newEnemy.transform.SetPositionAndRotation(_pointDeterminant.GetRandomSpawnPoint(), Quaternion.Euler(0f, Random.Range(0f, 360f), 0f));
+        newEnemy.transform.position = _pointDeterminant.GetRandomSpawnPoint();
+        
+        newEnemy.GetDirection(_directionNewEnemy);
     }
 }
