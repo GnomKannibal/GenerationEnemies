@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy: {fileID: 1637126832}
+  _pointDeterminant: {fileID: 1918366979}
 --- !u!1 &93060871
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338ea18657a16c948b6b5e261ac7d73d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pointDeterminant: {fileID: 1918366979}
 --- !u!1 &1823951669
 GameObject:
   m_ObjectHideFlags: 0
