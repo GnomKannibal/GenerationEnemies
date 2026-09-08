@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
         gameObject.transform.Translate(_direction * _speed * Time.deltaTime);
     }
 
-    public void GetDirection(Vector3 newDirection) 
+    public void TakeDirection(Vector3 newDirection) 
     {
         _direction = newDirection;
     }

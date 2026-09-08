@@ -10,12 +10,7 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        StartCoroutine(EnemyAutoSpawn());
-
-        _directionNewEnemy = new Vector3(Random.Range(-1, 2), 0f, Random.Range(-1, 2));
-
-        if (_directionNewEnemy == Vector3.zero)
-            _directionNewEnemy = Vector3.forward;
+        StartCoroutine(EnemyAutoSpawn());     
     }
 
     public IEnumerator EnemyAutoSpawn() 
@@ -37,7 +32,12 @@ public class Spawner : MonoBehaviour
         Enemy newEnemy = Instantiate(_enemy);
 
         newEnemy.transform.position = _pointDeterminant.GetRandomSpawnPoint();
-        
-        newEnemy.GetDirection(_directionNewEnemy);
+
+        _directionNewEnemy = new Vector3(Random.Range(-1, 2), 0f, Random.Range(-1, 2));
+
+        if (_directionNewEnemy == Vector3.zero)
+            _directionNewEnemy = Vector3.forward;
+
+        newEnemy.TakeDirection(_directionNewEnemy);
     }
 }

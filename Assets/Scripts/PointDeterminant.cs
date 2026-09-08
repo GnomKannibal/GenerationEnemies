@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +11,6 @@ public class PointDeterminant: MonoBehaviour
 
         int index = Random.Range(MinNumberIndex, _spawnPoints.Count);
 
-        return _spawnPoints[index].transform.position;
+        return _spawnPoints[index].position;
     }
 }
