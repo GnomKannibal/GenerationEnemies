@@ -770,10 +770,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPoints:
-  - {fileID: 442686342}
-  - {fileID: 1464912793}
-  - {fileID: 1940036406}
-  - {fileID: 93060871}
+  - {fileID: 442686343}
+  - {fileID: 1464912794}
+  - {fileID: 1940036407}
+  - {fileID: 93060872}
 --- !u!1 &1940036406
 GameObject:
   m_ObjectHideFlags: 0
